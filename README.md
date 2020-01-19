@@ -41,8 +41,10 @@ Open Government Licence - Canada. If re-using/re-mixing please provide attributi
 ## References
 <div id="refs" class="references">
 <div id="ref-Transport Canada 2017">
+    
 Transport Canada. 2017. “National Collision Database.”
 Government of Canada; <https://open.canada.ca/data/en/dataset/1eb9eba7-71d1-4b30-9fb1-30cbdab7e63a>.
+    
 </div>
 
 
