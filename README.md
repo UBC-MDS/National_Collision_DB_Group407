@@ -18,9 +18,14 @@ After wrangling the data, we will be doing a two tailed proportion z-test to com
 
 The `P_ISEV` feature provides the fatality of the accident. After splitting the data into train and test sets, we would like to predict which features strongly predict the fatality. Using a decision tree and/or random forest, we would like to understand the contribution of the features and predict if an accident would result in fatality or not. This would be useful for driving license agencies to investigate further on sensitive spots in the country and improve driver safety.
 
+![Roadway Configuration Chart](https://raw.githubusercontent.com/schepal/National_Collision_DB_Group407/master/src/eda/md_file/output_16_0.png)
+
+
 **Research Question 03**: Given the features(weather, time of the day, road surface, etc.) determine if emergency services would be needed for an accident.
 
 In this question, we would like to explore which accidents would require emergency medical services. Unlike in the previous case, emergency services will be needed. This question would help build staffing abilities for hospitals during appropriate hours so that accidents are immediately tended to. We would transform the target variables into 1 and 0 for the severity of the emergency. After training the model, we would like to be able to predict the staffing requirements for the test set.
+
+![Medical Service Needs](https://raw.githubusercontent.com/schepal/National_Collision_DB_Group407/master/src/eda/md_file/output_18_0.png)
 
 ## Usage
 
