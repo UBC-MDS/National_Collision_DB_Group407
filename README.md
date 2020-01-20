@@ -21,7 +21,7 @@ To run the download script file, clone this GitHub repository, install the
 commands at the command line/terminal from the root directory of this
 project:
 
-    python src/download_data.py https://opendatatc.blob.core.windows.net/opendatatc/NCDB_2017.csv
+    python src/data_script.py https://opendatatc.blob.core.windows.net/opendatatc/NCDB_2017.csv
 
 
 ## Dependencies
