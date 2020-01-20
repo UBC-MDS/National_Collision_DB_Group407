@@ -34,6 +34,8 @@ combined_train = pd.concat([X_train, y_train], axis=1)
 fatal = combined_train[combined_train.C_SEV == 1]
 ```
 
+## Predictive EDA
+
 **Research Question 01: What features are indicative of a person not surviving in a car accident?**
 
 **Research Question 02: Given the features( weather, time of the day, road surface, etc.) determine if emergency services would be needed for an accident.**
@@ -209,6 +211,8 @@ alt.Chart(q_0).mark_bar().encode(
 #     color=alt.Color('P_ISEV_tr:N', title = "EMS Needs")
 #          ).properties(title = "Road accidents in 2017 which and their medical service needs")
 ```
+
+## Inferential EDA
 
 **Inferential question**
 
