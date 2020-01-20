@@ -10,17 +10,17 @@ Our first research question is: “Is the injury rate of sitting in the front ro
 `H_0`: The injury rate of sitting in the front row passenger seat has no difference from sitting in the second row left seat.
 `H_1`: The injury rate of sitting in the front row passenger seat is different from sitting in the second row left seat.
 
-We will begin our project by first wrangling and cleaning our dataset. In the wrangling, we will filter out the vehicle types of light-duty vehicle (passenger car, passenger van, light utility vehicles and light duty pick up trucks). Then, we will filter out passengers with the seat position in the front row, right outboard and passengers with seat position in the second row, left outboard in the same vehicle and divide them into ‘front row’ and ‘second row’ group. 
+We will begin our project by first wrangling and cleaning our dataset. In the wrangling stage, we will limit the vehicle type to light-duty vehicles (passenger car, passenger van, light utility vehicles and light duty pick up trucks). Then, we will further filter the data - keeping only passengers sitting at front row, right outboard and passengers sitting at second row, left outboard in the same vehicle and label them as ‘passenger seat’ and ‘behind driver’, respectively.
 
 After wrangling the data, we will be doing a two tailed proportion z-test to compare if there is a significant difference between the fatality rate between the two groups.
 
 **Research Question 02**: What features are indicative of a person not surviving in a car accident?
 
-The `P_ISEV` feature provides the fatality of the accident. After splitting the data into train and test sets, we would like to predict which features strongly predict the fatality. Using a decision tree plant and/or random forest, we would like to understand the contribution of the feastures and predict if an accident would result in fatality or not. This would be useful for driving license agencies to investigate further on sensitive spots in the country and improve driver safety.
+The `P_ISEV` feature provides the fatality of the accident. After splitting the data into train and test sets, we would like to predict which features strongly predict the fatality. Using a decision tree and/or random forest, we would like to understand the contribution of the features and predict if an accident would result in fatality or not. This would be useful for driving license agencies to investigate further on sensitive spots in the country and improve driver safety.
 
-**Research Question 03**: Given the features( weather, time of the day, road surface, etc.) determine if emergency services would be needed for an accident.
+**Research Question 03**: Given the features(weather, time of the day, road surface, etc.) determine if emergency services would be needed for an accident.
 
-In this question, we would like to explore in which accidents would require emergency medical services. Unlike in the previous case, emergency services will be needed. This question would help build staffing abilities for hospitals during appropriate hours so that accidents are immediately tended to. Intent would be transform the target variables into 1 and 0 for the need of emergency needs. After training the model, we would like to be able to predice for the test set.
+In this question, we would like to explore which accidents would require emergency medical services. Unlike in the previous case, emergency services will be needed. This question would help build staffing abilities for hospitals during appropriate hours so that accidents are immediately tended to. We would transform the target variables into 1 and 0 for the severity of the emergency. After training the model, we would like to be able to predict the staffing requirements for the test set.
 
 ## Usage
 
