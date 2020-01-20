@@ -16,11 +16,11 @@ After wrangling the data, we will be doing a two tailed proportion z-test to com
 
 **Research Question 02**: What features are indicative of a person not surviving in a car accident?
 
-The `P_ISEV` feature provides the fatality of the accident. After splitting the data into train and test sets, we would like to predict which features strongly predict the fatality. Using a decision tree plant or random forest, we would like to understand the contribution of the feastures and predict if an accident would result in fatality or not.
+The `P_ISEV` feature provides the fatality of the accident. After splitting the data into train and test sets, we would like to predict which features strongly predict the fatality. Using a decision tree plant and/or random forest, we would like to understand the contribution of the feastures and predict if an accident would result in fatality or not. This would be useful for driving license agencies to investigate further on sensitive spots in the country and improve driver safety.
 
-**Research Question 02**: Given the features( weather, time of the day, road surface, etc.) determine if emergency services would be needed for an accident.
+**Research Question 03**: Given the features( weather, time of the day, road surface, etc.) determine if emergency services would be needed for an accident.
 
-In this question, we would like to explore how much 
+In this question, we would like to explore in which accidents would require emergency medical services. Unlike in the previous case, emergency services will be needed. This question would help build staffing abilities for hospitals during appropriate hours so that accidents are immediately tended to. Intent would be transform the target variables into 1 and 0 for the need of emergency needs. After training the model, we would like to be able to predice for the test set.
 
 ## Usage
 
