@@ -4,7 +4,8 @@
 
 The data we are using is from the National Collision Database and can be found on the [Government of Canada website](https://open.canada.ca/data/en/dataset/1eb9eba7-71d1-4b30-9fb1-30cbdab7e63a). It’s a database that contains all police-reported motor vehicle collisions on public roads in Canada. The data is from 1999 to 2017. Each row provides several data points for a passenger with the detailed summary statistics of the collision.
 
-Our research question is: “Is the injury rate of sitting in the front row passenger seat different from sitting on the second row left seat?” This is an inferential question. We will be doing hypothesis testing with a 95% confidence interval. The null and alternative hypothesis are included as follows:
+**Research question 01**
+Our first research question is: “Is the injury rate of sitting in the front row passenger seat different from sitting on the second row left seat?” This is an inferential question. We will be doing hypothesis testing with a 95% confidence interval. The null and alternative hypothesis are included as follows:
 
 `H_0`: The injury rate of sitting in the front row passenger seat has no difference from sitting in the second row left seat.
 `H_1`: The injury rate of sitting in the front row passenger seat is different from sitting in the second row left seat.
@@ -13,6 +14,13 @@ We will begin our project by first wrangling and cleaning our dataset. In the wr
 
 After wrangling the data, we will be doing a two tailed proportion z-test to compare if there is a significant difference between the fatality rate between the two groups.
 
+**Research Question 02**: What features are indicative of a person not surviving in a car accident?
+
+The `P_ISEV` feature provides the fatality of the accident. After splitting the data into train and test sets, we would like to predict which features strongly predict the fatality. Using a decision tree plant or random forest, we would like to understand the contribution of the feastures and predict if an accident would result in fatality or not.
+
+**Research Question 02**: Given the features( weather, time of the day, road surface, etc.) determine if emergency services would be needed for an accident.
+
+In this question, we would like to explore how much 
 
 ## Usage
 
