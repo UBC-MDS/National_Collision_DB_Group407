@@ -1,4 +1,9 @@
+""" Script used to train and test the model for prediction.
 
+Usage:
+  ml_lgr_rf.py
+
+"""
 import pandas as pd
 import altair as alt
 import numpy as np
