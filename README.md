@@ -39,8 +39,9 @@ To run the download script file, clone this GitHub repository, install the
 commands at the command line/terminal from the root directory of this
 project:
 
-    python src/data_script.py https://opendatatc.blob.core.windows.net/opendatatc/NCDB_2017.csv
-
+    Rscript data_read.R --filepath='https://opendatatc.blob.core.windows.net/opendatatc/NCDB_2017.csv'
+    python data_clean.py --read_path=../data/file.csv --write_path=../data/
+    python eda.py --read_path=../data/cleaned_train_data.csv --write_path=../results/
 
 ## Dependencies
 Python 3.7.3 and Python packages:
