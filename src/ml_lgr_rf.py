@@ -1,4 +1,4 @@
-""" Script used to train and test the model for prediction.
+""" Script used to train and test the model for prediction. It generates the confusion matrix and classification report
 
 Usage:
   ml_lgr_rf.py
