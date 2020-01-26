@@ -39,11 +39,11 @@ To run the download script file, clone this GitHub repository, install the
 commands at the command line/terminal from the root directory of this
 project:
 
-    Rscript data_read.R --filepath='https://opendatatc.blob.core.windows.net/opendatatc/NCDB_2017.csv'
-    python data_clean.py --read_path= data/file.csv --write_path= data/
-    python eda.py --read_path= data/cleaned_train_data.csv --write_path= results/
+    Rscript src/data_read.R --filepath='https://opendatatc.blob.core.windows.net/opendatatc/NCDB_2017.csv'
+    python src/data_clean.py --read_path= data/file.csv --write_path= data/
+    python src/eda.py --read_path= data/cleaned_train_data.csv --write_path= results/
     Rscript -e "rmarkdown::render('doc/eda_report.Rmd')"
-    python ml_lgr_rf.py
+    python src/ml_lgr_rf.py
     Rscript -e "rmarkdown::render('doc/final_report.Rmd')"
 
 ## Dependencies
