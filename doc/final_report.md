@@ -6,7 +6,9 @@ Predicting Car Crash Fatalities and Proposing Solutions to Save Lives
 Here we attempt to build a classification model using a variety of
 different machine learning algorithms to distinguish between fatal and
 non-fatal car accidents based on a set of relevant features. Our best
-model gave us a recall and precision score of X and Y respectively.
+model gave us an f1-score of 0.45 and 0.99 for the fatal and non-fatal
+categories respectively. Despite poor initial results, we believe these
+values are decent starting points as our dataset is highly imbalanced.
 
 ## Introduction:
 
@@ -65,7 +67,9 @@ found on the Government of Canada website. It’s a database that contains
 all police-reported motor vehicle collisions on public roads in Canada.
 The data we specifically chose was from 2017. Each row provides several
 data points for a passenger with the detailed summary statistics of the
-collision. Analysis:
+collision.
+
+### Analysis:
 
 We applied several classification models including: Logistic Regression
 and the Random Forest Classifier. None of the data points in our dataset
@@ -88,21 +92,42 @@ analysis.
 Accuracy is not an appropriate measure to include for our analysis here
 because the data is highly imbalanced. Virtually any classification
 model can achieve high accuracy when the data is highly imbalanced,
-however, the primary metric is precision and recall. Overall we found
-that the Random Forest classification model performed the best with the
-highest overall recall and precision of Xand Y respectively based on the
-confusion
-matrix.
+however, a more useful metric is the f1-score. Overall we found that the
+Random Forest classification model performed the best with the highest
+overall f1-score of 0.45 and 0.99 for the fatal and non-fatal classes
+respectively.
 
-### \>\> Insert chart and image of random forest + Logistic Regression (reference it from the results folder).
+#### Random Forest Results
+
+``` r
+kable(random_forest)
+```
+
+| X1        |           1 |            2 |  accuracy |    macro avg | weighted avg |
+| :-------- | ----------: | -----------: | --------: | -----------: | -----------: |
+| precision |   0.7004049 | 9.904165e-01 | 0.9884515 | 8.454107e-01 | 9.862797e-01 |
+| recall    |   0.3326923 | 9.979407e-01 | 0.9884515 | 6.653165e-01 | 9.884515e-01 |
+| f1-score  |   0.4511082 | 9.941644e-01 | 0.9884515 | 7.226363e-01 | 9.864181e-01 |
+| support   | 520.0000000 | 3.593500e+04 | 0.9884515 | 3.645500e+04 | 3.645500e+04 |
+
+``` r
+kable(log_reg)
+```
+
+| X1        |   1 |            2 |  accuracy |    macro avg | weighted avg |
+| :-------- | --: | -----------: | --------: | -----------: | -----------: |
+| precision |   0 | 9.857354e-01 | 0.9857084 | 4.928677e-01 | 9.716748e-01 |
+| recall    |   0 | 9.999722e-01 | 0.9857084 | 4.999861e-01 | 9.857084e-01 |
+| f1-score  |   0 | 9.928028e-01 | 0.9857084 | 4.964014e-01 | 9.786413e-01 |
+| support   | 520 | 3.593500e+04 | 0.9857084 | 3.645500e+04 | 3.645500e+04 |
 
 As a whole we believe there are further improvements that can be made in
 future iterations of this project. Firstly, we believe that using more
-data from previous years can help us better learn any temporal
+data from previous years can help us better learn the temporal
 relationships and seasonality which may be present. Furthermore, our
-current analysis was not implemented with hyper parameter optimization
+current analysis was not implemented with hyper-parameter optimization
 but for the future we would want to tweak our model accordingly to
-refining the overall predictive capacity of our model.
+refine the overall predictive capacity of our model.
 
 # References
 

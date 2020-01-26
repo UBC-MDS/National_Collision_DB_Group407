@@ -43,9 +43,9 @@ project:
     python data_clean.py --read_path= data/file.csv --write_path= data/
     python eda.py --read_path= data/cleaned_train_data.csv --write_path= results/
     Rscript -e "rmarkdown::render('doc/eda_report.Rmd')"
-    ************ TO INSERT ML SCRIPT HERE*******
+    python ml_lgr_rf.py
     Rscript -e "rmarkdown::render('doc/final_report.Rmd')"
-   
+
 ## Dependencies
 Python 3.7.3 and Python packages:
 - docopt==0.6.2
@@ -63,10 +63,8 @@ Open Government Licence - Canada. If re-using/re-mixing please provide attributi
 ## References
 <div id="refs" class="references">
 <div id="ref-Transport Canada 2017">
-    
+
 Transport Canada. 2017. “National Collision Database.”
 Government of Canada; <https://open.canada.ca/data/en/dataset/1eb9eba7-71d1-4b30-9fb1-30cbdab7e63a>.
-    
+
 </div>
-
-
