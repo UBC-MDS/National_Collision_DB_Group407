@@ -134,11 +134,12 @@ summary
 
 confusion_matrix_lgr_train = confusion_matrix(y_train, lgr_rfe.predict(X_train))
 confusion_matrix_lgr_valid = confusion_matrix(y_valid, lgr_rfe.predict(X_valid))
-report_lgr = classification_report(y_valid, lgr_rfe.predict(X_valid))
+report_lgr = classification_report(y_valid, lgr_rfe.predict(X_valid), output_dict = True)
 
 confusion_matrix_rfe_train = confusion_matrix(y_train, rf_rfe.predict(X_train))
 confusion_matrix_rfe_valid = confusion_matrix(y_valid, rf_rfe.predict(X_valid))
-report_rf = classification_report(y_valid, rf_rfe.predict(X_valid))
+report_rf = classification_report(y_valid, rf_rfe.predict(X_valid), output_dict = True)
+
 
 
 # **Confusion matrix for logistic regression approach**
@@ -156,6 +157,11 @@ confusion_matrix_rfe_valid
 print(report_lgr)
 print(report_rf)
 
+df_rf_classification = pd.DataFrame(report_rf)
+df_rf_classification.to_csv("../results/rf_classification.csv")
+
+df_rf_classification = pd.DataFrame(report_lgr)
+df_rf_classification.to_csv("../results/lgr_classification.csv")
 
 
 
