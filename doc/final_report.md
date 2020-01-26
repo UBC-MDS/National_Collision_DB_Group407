@@ -124,10 +124,18 @@ kable(log_reg)
 As a whole we believe there are further improvements that can be made in
 future iterations of this project. Firstly, we believe that using more
 data from previous years can help us better learn the temporal
-relationships and seasonality which may be present. Furthermore, our
-current analysis was not implemented with hyper-parameter optimization
-but for the future we would want to tweak our model accordingly to
-refine the overall predictive capacity of our model.
+relationships and seasonality which may be present. Alternatively, we
+could also seek for improvements by targeting the data imbalance issue
+as mentioned in this
+article(<span class="citeproc-not-found" data-reference-id="how">**???**</span>
+to handle imbalanced classes in machine learning\_2020). Furthermore,
+our current analysis was not implemented with hyper-parameter
+optimization but for the future we would want to tweak our model
+accordingly to refine the overall predictive capacity of our model. Some
+limitations of our analysis includes that diease is a large cause of
+death besides car
+accidents(<span class="citeproc-not-found" data-reference-id="facts">**???**</span>
++ statistics: mortality risk | iii\_2020).
 
 # References
 
