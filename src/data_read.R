@@ -1,4 +1,4 @@
-# author: DSCI_522_Group_207
+# author: DSCI_522_Group_407
 # date: 2020-01-22
 #
 "This script is used to download data (.csv file) from a 

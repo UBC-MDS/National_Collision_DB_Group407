@@ -1,6 +1,8 @@
 ---
 title: "Predicting Car Crash Fatalities and Proposing Solutions to Save Lives"
-output: github_document
+bibliography: refs.bib
+output: 
+  github_document
 ---
 
 ```{r setup, include=FALSE}
@@ -21,6 +23,35 @@ We want to harness the power machine learning to a rich dataset of car collision
 
 ## Methods:
 
+National Car collision data were sourced from the [Government of Canada's Open Data website](http://open.canada.ca/en/open-data). Specifically, [National Collision Database 2017](https://open.canada.ca/data/en/dataset/1eb9eba7-71d1-4b30-9fb1-30cbdab7e63a).
+
+The R programming language [@R] and R packages were used to perform the analysis as follow: 
+
+- Tidyverse [@tidyverse]
+
+- Stringr [@stringr]
+
+- Testthat [@testthat]
+
+- Docopt [@docopt]
+
+The Python programming language [@python] and Python packages were used to perform the analysis as follow:
+
+- Matplotlib [@matplotlib]
+
+- Pandas [@mckinney2010data]
+
+- Numpy [@oliphant2006guide]
+
+- Scikit-Learn library[@scikit-learn]
+
+- Docopt [@docopt]
+
+- Seaborn [@seaborn]
+
+- Altair [@Altair2018]
+
+
 ### Data:
 
 The data we are using is from the National Collision Database and can be found on the Government of Canada website. It’s a database that contains all police-reported motor vehicle collisions on public roads in Canada. The data we specifically chose was from 2017. Each row provides several data points for a passenger with the detailed summary statistics of the collision.
@@ -40,5 +71,5 @@ Accuracy is not an appropriate measure to include for our analysis here because 
 
 As a whole we believe there are further improvements that can be made in future iterations of this project. Firstly, we believe that using more data from previous years can help us better learn any temporal relationships and seasonality which may be present. Furthermore,  our current analysis was not implemented with hyper parameter optimization but for the future we would want to tweak our model accordingly to refining the overall predictive capacity of our model. 
 
-References:
+# References
 

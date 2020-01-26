@@ -16,7 +16,12 @@ from sklearn.model_selection import train_test_split
 opt = docopt(__doc__)
 
 def main(read_path, write_path):
+    
     df = pd.read_csv(read_path)
+    
+    if not read_path.endswith(".csv"):
+        raise ValueError("file path should end with .csv")
+    
     X = df.drop(["C_YEAR", "C_VEHS", "C_CONF", "V_ID", "V_YEAR",
                  "P_ID", "P_PSN", "P_ISEV", "P_USER", "C_CASE", "C_SEV", "P_SEX", "P_AGE", "P_SAFE"], axis=1)
     y = df["C_SEV"]
@@ -33,6 +38,6 @@ def main(read_path, write_path):
     print("Saving files...")
     final_cleaned_train.to_csv(write_path +  "cleaned_train_data.csv")
     final_cleaned_test.to_csv(write_path + "cleaned_test_data.csv")
-
+    
 if __name__ == "__main__":
     main(opt["--read_path"], opt["--write_path"])
