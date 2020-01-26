@@ -28,8 +28,8 @@ opt <- docopt(doc)
 #' main('https://file.csv')
 main <- function(file_path) {
     if (str_sub(file_path, start = -3) == 'csv') {
-    download.file(url = opt$filepath, destfile = "../data/raw_data.csv")
-    data <- read.csv("../data/raw_data.csv")
+    download.file(url = opt$filepath, destfile = "data/raw_data.csv")
+    data <- read.csv("data/raw_data.csv")
     } else {
     print("the url type shoule be .csv file")
     }
