@@ -7,7 +7,7 @@ publicly accessible URL.
 Usage: data_read.R --filepath=<filepath>
 
 Example:
-   Rscript src/data_read.R --filepath='https://opendatatc.blob.core.windows.net/opendatatc/NCDB_2017.csv'
+   Rscript data_read.R --filepath='https://opendatatc.blob.core.windows.net/opendatatc/NCDB_2017.csv'
 
 Options:
 <filepath>        Takes a file path (this is a required positional argument)
@@ -26,7 +26,6 @@ opt <- docopt(doc)
 #' @return a raw_data.csv file saved in the data folder
 #' @examples
 #' main('https://file.csv')
-
 main <- function(file_path) {
     if (str_sub(file_path, start = -3) == 'csv') {
     download.file(url = opt$filepath, destfile = "data/raw_data.csv")
