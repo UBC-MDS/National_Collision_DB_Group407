@@ -124,10 +124,14 @@ kable(log_reg)
 As a whole we believe there are further improvements that can be made in
 future iterations of this project. Firstly, we believe that using more
 data from previous years can help us better learn the temporal
-relationships and seasonality which may be present. Furthermore, our
-current analysis was not implemented with hyper-parameter optimization
-but for the future we would want to tweak our model accordingly to
-refine the overall predictive capacity of our model.
+relationships and seasonality which may be present. Alternatively, we
+could also seek for improvements by targeting the data imbalance issue
+as mentioned in this article(2020a). Furthermore, our current analysis
+was not implemented with hyper-parameter optimization but for the future
+we would want to tweak our model accordingly to refine the overall
+predictive capacity of our model. Some limitations of our analysis
+includes that diease is a large cause of death besides car
+accidents(2020b).
 
 # References
 
@@ -222,6 +226,20 @@ Journal* 3: 5–10.
 
 ———. 2019. *Stringr: Simple, Consistent Wrappers for Common String
 Operations*. <https://CRAN.R-project.org/package=stringr>.
+
+</div>
+
+<div id="ref-imbalance">
+
+2020a. *EliteDataScience*.
+<https://elitedatascience.com/imbalanced-classes>.
+
+</div>
+
+<div id="ref-Iii">
+
+2020b. *Iii.org*.
+<https://www.iii.org/fact-statistic/facts-statistics-mortality-risk>.
 
 </div>
 
