@@ -38,7 +38,8 @@ def main(read_path, write_path):
     hours = non_fatal.groupby("C_HOUR").sum()[['count']]
     plot_hours = [int(i) for i in hours.values]
     hours_of_day = range(0, 24)
- #   plt.bar(hours_of_day, plot_hours)
+
+    plt.bar(hours_of_day, plot_hours)
     plt.title("Hour of Day and Non Fatal Crashes")
     plt.xlabel("Hour of Day")
     plt.xticks(np.arange(min(hours_of_day), max(hours_of_day)+1, 2.0))
