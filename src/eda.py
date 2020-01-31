@@ -19,9 +19,9 @@ opt = docopt(__doc__)
 def main(read_path, write_path):
     df = pd.read_csv(read_path)
     
-    df = df.drop(["Unnamed: 0","C_SEV_2"], axis=1)
-    fatal = df[df.C_SEV_1 == 1]
-    non_fatal = df[df.C_SEV_1 == 0]
+    df = df.drop(["Unnamed: 0"], axis=1)
+    fatal = df[df.C_SEV == 1]
+    non_fatal = df[df.C_SEV == 2]
     df_names = list(df.columns)
 
     # Number of Fatal Crashes Per Hour of Day
