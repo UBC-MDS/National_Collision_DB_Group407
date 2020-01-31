@@ -78,6 +78,7 @@ Accuracy is not an appropriate measure to include for our analysis here because 
 kable(random_forest)
 ```
 
+#### Logistic Regression Results
 
 ```{r}
 kable(log_reg)
