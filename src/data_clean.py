@@ -1,11 +1,8 @@
 """ Script used to import CSV data from a publicly accessible URL or relative file path.
-
 Usage:
   data_clean.py --read_path=<read_path> --write_path=<write_path>
-
 Example:
   python data_clean.py --read_path=../data/raw_data.csv --write_path=../data/
-
 """
 from docopt import docopt
 import pandas as pd
@@ -16,11 +13,11 @@ from sklearn.model_selection import train_test_split
 opt = docopt(__doc__)
 
 def main(read_path, write_path):
-    
+
     if read_path[-4:] != ".csv":
         return print(ValueError("file path should end with .csv"))
     else:
-    
+
         df = pd.read_csv(read_path)
 
         X = df.drop(["C_YEAR", "C_VEHS", "C_CONF", "V_ID", "V_YEAR",
@@ -41,6 +38,6 @@ def main(read_path, write_path):
         final_cleaned_test.to_csv(write_path + "cleaned_test_data.csv")
 
     assert main("../data/assert.html", "../results/") == "file path should end with .csv", 'It should raise a warning'
-    
+
 if __name__ == "__main__":
     main(opt["--read_path"], opt["--write_path"])
