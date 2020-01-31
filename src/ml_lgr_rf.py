@@ -1,7 +1,7 @@
 """ Script used to train and test the model for prediction. It generates the confusion matrix and classification report
 
 Usage:
-  ml_lgr_rf.py
+  çresults/rf_classification.csvml_lgr_rf.py
 
 """
 import pandas as pd
@@ -33,11 +33,10 @@ sns.heatmap( df.corr(), annot=True, cmap=plt.cm.Blues)
 plt.show()
 
 
-X_train, X_valid, y_train, y_valid = train_test_split(df.drop(columns = 'C_SEV'), 
-                                                      df['C_SEV'], 
-                                                      test_size=0.2, 
+X_train, X_valid, y_train, y_valid = train_test_split(df.drop(['C_SEV'], axis = 1),
+                                                      df['C_SEV'],
+                                                      test_size=0.2,
                                                       random_state = 100)
-
 
 
 def fit_and_report(model, X, y, Xv, yv, mode = 'regression'):
