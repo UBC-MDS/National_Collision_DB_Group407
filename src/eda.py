@@ -18,33 +18,32 @@ opt = docopt(__doc__)
 
 def main(read_path, write_path):
     df = pd.read_csv(read_path)
-    
-    df = df.drop(["Unnamed: 0"], axis=1)
+    df['count'] = 1
     fatal = df[df.C_SEV == 1]
     non_fatal = df[df.C_SEV == 2]
     df_names = list(df.columns)
 
     # Number of Fatal Crashes Per Hour of Day
-    hour_columns = [s for s in df_names if "C_HOUR" in s]
-    hours = fatal[hour_columns].sum().sort_values(ascending=False).index
-    hour_index_names = [i[-2:].replace("_", "") for i in hours]
-    plt.bar(hour_index_names,
-            fatal[hour_columns].sum().sort_values(ascending=False))
+    hours = fatal.groupby("C_HOUR").sum()[['count']]
+    plot_hours = [int(i) for i in hours.values]
+    hours_of_day = range(0, 24)
+    plt.bar(hours_of_day, plot_hours)
     plt.title("Hour of Day and Fatal Crashes")
     plt.xlabel("Hour of Day")
+    plt.xticks(np.arange(min(hours_of_day), max(hours_of_day)+1, 2.0))
     plt.ylabel("Fatal Crashes")
-    plt.savefig(write_path + "fatal_hourly_crashes.png")
+    plt.savefig(write_path + "fatal_hourly_crashes.png");
 
     # Number of Non-Fatal Crashes Per Hour of Day
-    hour_columns = [s for s in df_names if "C_HOUR" in s]
-    hours = non_fatal[hour_columns].sum().sort_values(ascending=False).index
-    hour_index_names = [i[-2:].replace("_", "") for i in hours]
-    plt.bar(hour_index_names,
-            non_fatal[hour_columns].sum().sort_values(ascending=False))
-    plt.title("Hour of Day and Non-Fatal Crashes")
+    hours = non_fatal.groupby("C_HOUR").sum()[['count']]
+    plot_hours = [int(i) for i in hours.values]
+    hours_of_day = range(0, 24)
+ #   plt.bar(hours_of_day, plot_hours)
+    plt.title("Hour of Day and Non Fatal Crashes")
     plt.xlabel("Hour of Day")
-    plt.ylabel("Non-Fatal Crashes")
-    plt.savefig(write_path + "non_fatal_hourly_crashes.png")
+    plt.xticks(np.arange(min(hours_of_day), max(hours_of_day)+1, 2.0))
+    plt.ylabel("Non Fatal Crashes")
+    plt.savefig(write_path + "non_fatal_hourly_crashes.png");
 
     # Top 10 Fatal Features
     fatal_features = pd.DataFrame(fatal.sum().sort_values(ascending=False).head(10))[1:]
