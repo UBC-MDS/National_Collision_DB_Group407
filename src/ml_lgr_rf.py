@@ -18,7 +18,7 @@ from sklearn.feature_selection import RFE
 import time
 from sklearn.metrics import classification_report
 
-#from sklearn.metrics import plot_confusion_matrix
+from sklearn.metrics import plot_confusion_matrix
 
 
 
@@ -28,9 +28,9 @@ df.head(1)
 df = df.drop(columns = 'Unnamed: 0', axis =0)
 
 
-plt.figure(figsize=(50,50))
-sns.heatmap( df.corr(), annot=True, cmap=plt.cm.Blues)
-plt.show()
+#plt.figure(figsize=(50,50))
+#sns.heatmap( df.corr(), annot=True, cmap=plt.cm.Blues)
+#plt.show()
 
 
 X_train, X_valid, y_train, y_valid = train_test_split(df.drop(['C_SEV'], axis = 1),
@@ -157,10 +157,10 @@ print(report_lgr)
 print(report_rf)
 
 df_rf_classification = pd.DataFrame(report_rf)
-df_rf_classification.to_csv("../results/rf_classification.csv")
+df_rf_classification.to_csv(r'results/rf_classification.csv')
 
 df_rf_classification = pd.DataFrame(report_lgr)
-df_rf_classification.to_csv("../results/lgr_classification.csv")
+df_rf_classification.to_csv("results/lgr_classification.csv")
 
 
 
