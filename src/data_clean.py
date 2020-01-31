@@ -1,8 +1,11 @@
 """ Script used to import CSV data from a publicly accessible URL or relative file path.
+
 Usage:
   data_clean.py --read_path=<read_path> --write_path=<write_path>
+
 Example:
   python data_clean.py --read_path=../data/raw_data.csv --write_path=../data/
+
 """
 from docopt import docopt
 import pandas as pd
@@ -13,17 +16,8 @@ from sklearn.model_selection import train_test_split
 opt = docopt(__doc__)
 
 def main(read_path, write_path):
-<<<<<<< HEAD
 
-    if read_path[-4:] != ".csv":
-        return print(ValueError("file path should end with .csv"))
-    else:
-
-        df = pd.read_csv(read_path)
-=======
-    
     df = pd.read_csv(read_path)
->>>>>>> upstream/master
 
     X = df.drop(["C_YEAR", "C_VEHS", "C_CONF", "V_ID", "V_YEAR",
                  "P_ID", "P_PSN", "P_ISEV", "P_USER", "C_CASE", "C_SEV", "P_SEX", "P_AGE", "P_SAFE"], axis=1)
@@ -42,12 +36,7 @@ def main(read_path, write_path):
     final_cleaned_train.to_csv(write_path +  "cleaned_train_data.csv")
     final_cleaned_test.to_csv(write_path + "cleaned_test_data.csv")
 
-<<<<<<< HEAD
-    assert main("../data/assert.html", "../results/") == "file path should end with .csv", 'It should raise a warning'
-
-=======
   #  assert main("../data/assert.html", "../results/") == "file path should end with .csv", 'It should raise a warning'
-    
->>>>>>> upstream/master
+
 if __name__ == "__main__":
     main(opt["--read_path"], opt["--write_path"])
