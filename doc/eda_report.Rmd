@@ -1,6 +1,7 @@
 ---
 title: "Exploratory data analysis of the National Collision Database"
-output: github_document
+output: 
+  github_document
 ---
 
 ```{r setup, include=FALSE}
