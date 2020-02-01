@@ -119,7 +119,8 @@ convincing AUC plot. However, when exposed to new test data, both the
 algorithms don’t predict very well. The tendency is to classify actual
 fatal accidents as non-fatal. Since we would like to identify fatalities
 better so that medical services and emergency services could be
-notified, we should be looking at a system with higher precision.
+notified, we should be looking at a system with higher
+precision.
 
 #### Random Forest Results Classification report
 
@@ -134,7 +135,7 @@ kable(random_forest_classification)
 | f1-score  |    0.9736025 |    0.9732494 | 0.9734271 |    0.9734259 |    0.9734259 |
 | support   | 2559.0000000 | 2559.0000000 | 0.9734271 | 5118.0000000 | 5118.0000000 |
 
-#### Random Forest Results Confusion matrix on the test data
+#### Random Forest Results Confusion matrix on the train data
 
 ``` r
 kable(random_forest_train_confusion)
@@ -198,17 +199,14 @@ kable(log_reg_test_confusion)
 # Changes and future improvements
 
 Since the previous release, we have succesfully demonstrated the usage
-of hyperparameter optimization using GridSearchCV, implemented a ML
-automation pipeline, added more tables to better support the conclusion
-and improved the data imbalance. There are plenty more improvements
-(scalability, additional hyperparameter optimization) and can be a focus
-outside the academic nature of this analysis.As a whole we believe there
-are further improvements that can be made in future iterations of this
-project. We believe that using more data from previous years can help us
-better learn the temporal relationships and seasonality which may be
-present. Though this doesn’t demonstrate causation, some limitations of
-our analysis includes that diease is a large cause of death besides car
-accidents(2020).
+of hyperparameter optimization using GridSearchCV, implemented a machine
+learning pipeline, added meaningful evaluation metrics to better support
+the conclusion and improved the issue of data imbalance. There are
+plenty more improvements (scalability, additional hyperparameter
+optimization) which can be addressed outside of the academic nature of
+this analysis. Lastly, we believe using more data from previous years
+can help us better learn the temporal relationships and seasonality
+which may be present.
 
 # References
 
@@ -224,7 +222,7 @@ Language*. <https://CRAN.R-project.org/package=docopt>.
 <div id="ref-matplotlib">
 
 Hunter, J. D. 2007. “Matplotlib: A 2D Graphics Environment.” *Computing
-in Science & Engineering* 9 (3): 90–95.
+in Science & Engineering* 9 (3). IEEE COMPUTER SOC: 90–95.
 <https://doi.org/10.1109/MCSE.2007.55>.
 
 </div>
@@ -265,7 +263,7 @@ Computing*. Vienna, Austria: R Foundation for Statistical Computing.
 VanderPlas, Jacob, Brian Granger, Jeffrey Heer, Dominik Moritz, Kanit
 Wongsuphasawat, Eitan Lees, Ilia Timofeev, Ben Welsh, and Scott Sievert.
 2018. “Altair: Interactive Statistical Visualizations for Python.”
-*Journal of Open Source Software*, December.
+*Journal of Open Source Software*, December. The Open Journal.
 <https://doi.org/10.21105/joss.01057>.
 
 </div>
@@ -303,13 +301,6 @@ Journal* 3: 5–10.
 
 ———. 2019. *Stringr: Simple, Consistent Wrappers for Common String
 Operations*. <https://CRAN.R-project.org/package=stringr>.
-
-</div>
-
-<div id="ref-Iii">
-
-2020\. *Iii.org*.
-<https://www.iii.org/fact-statistic/facts-statistics-mortality-risk>.
 
 </div>
 
