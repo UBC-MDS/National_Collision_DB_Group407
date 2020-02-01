@@ -27,6 +27,7 @@ from sklearn.pipeline import Pipeline, FeatureUnion, make_pipeline
 
 from sklearn.metrics import classification_report
 from sklearn.metrics import confusion_matrix
+from sklearn.metrics import roc_curve
 
 cleaned = pd.read_csv('data/cleaned_train_data.csv')
 cleaned_test = pd.read_csv('data/cleaned_test_data.csv')
@@ -206,7 +207,7 @@ plt.plot((0,1),(0,1),'--k');
 plt.xlabel('false positive rate');
 plt.ylabel('true positive rate');
 plt.title('AUC Random Forest');
-plt.savefig('../results/auc_rf.png')
+plt.savefig('results/auc_rf.png')
 
 # In[88]:
 
@@ -233,7 +234,7 @@ results_dict['Log'] = [round(tr_err,3), round(valid_err,3)]
 
 print(results_dict)
 
-pd.DataFrame(results_dict, index = ['Train', 'Test']).to_csv("../results/errors.csv")
+pd.DataFrame(results_dict, index = ['Train', 'Test']).to_csv("results/errors.csv")
 print("Both models were run and the error file has been generated")
 
 # In[91]:
@@ -253,7 +254,7 @@ plt.plot((0,1),(0,1),'--k');
 plt.xlabel('false positive rate');
 plt.ylabel('true positive rate');
 plt.title('AUC Logistic regression');
-plt.savefig('../results/auc_lgr.png')
+plt.savefig('results/auc_lgr.png')
 
 # In[92]:
 

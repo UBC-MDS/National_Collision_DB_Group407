@@ -102,8 +102,8 @@ kable(errors)
 
 | X1    | Random Forest |   Log |
 | :---- | ------------: | ----: |
-| Train |         0.027 | 0.295 |
-| Test  |         0.296 | 0.310 |
+| Train |         0.019 | 0.295 |
+| Test  |         0.240 | 0.310 |
 
 Accuracy is not an appropriate measure to include for our analysis here
 because the data is highly imbalanced. Virtually any classification
@@ -130,10 +130,10 @@ kable(random_forest_classification)
 
 | X1        |            1 |            2 |  accuracy |    macro avg | weighted avg |
 | :-------- | -----------: | -----------: | --------: | -----------: | -----------: |
-| precision |    0.9672194 |    0.9798020 | 0.9734271 |    0.9735107 |    0.9735107 |
-| recall    |    0.9800703 |    0.9667839 | 0.9734271 |    0.9734271 |    0.9734271 |
-| f1-score  |    0.9736025 |    0.9732494 | 0.9734271 |    0.9734259 |    0.9734259 |
-| support   | 2559.0000000 | 2559.0000000 | 0.9734271 | 5118.0000000 | 5118.0000000 |
+| precision |    0.9760247 |    0.9861769 | 0.9810473 |    0.9811008 |    0.9811008 |
+| recall    |    0.9863228 |    0.9757718 | 0.9810473 |    0.9810473 |    0.9810473 |
+| f1-score  |    0.9811467 |    0.9809468 | 0.9810473 |    0.9810468 |    0.9810468 |
+| support   | 2559.0000000 | 2559.0000000 | 0.9810473 | 5118.0000000 | 5118.0000000 |
 
 #### Random Forest Results Confusion matrix on the train data
 
@@ -143,8 +143,8 @@ kable(random_forest_train_confusion)
 
 | X1        | Not fatal | Fatal |
 | :-------- | --------: | ----: |
-| Not fatal |      2508 |    51 |
-| Fatal     |        85 |  2474 |
+| Not fatal |      2524 |    35 |
+| Fatal     |        62 |  2497 |
 
 #### Random Forest Results Confusion matrix on the test data
 
@@ -154,8 +154,8 @@ kable(random_forest_test_confusion)
 
 | X1        | Not fatal | Fatal |
 | :-------- | --------: | ----: |
-| Not fatal |       590 |    81 |
-| Fatal     |     13393 | 31470 |
+| Not fatal |       582 |    89 |
+| Fatal     |     10821 | 34042 |
 
 #### Logistic Regression Classification report
 

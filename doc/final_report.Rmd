@@ -88,8 +88,6 @@ Our training error turns out the be the following:
 kable(errors)
 ```
 
-
-
 Accuracy is not an appropriate measure to include for our analysis here because the data is highly imbalanced. Virtually any classification model can achieve high accuracy when the data is highly imbalanced, however, a more useful metric is the f1-score. Overall we found that the Random Forest classification model performed the best with the highest overall f1-score of 0.45 and 0.99 for the fatal and non-fatal classes respectively. 
 
 After balancing the dataset using upward balancing techniques, we find that the test confusion matrix seems quite balanced evidenced by a convincing AUC plot. However, when exposed to new test data, both the algorithms don't predict very well. The tendency is to classify actual fatal accidents as non-fatal. Since we would like to identify fatalities better so that medical services and emergency services could be notified, we should be looking at a system with higher precision.
@@ -114,8 +112,6 @@ kable(random_forest_train_confusion)
 kable(random_forest_test_confusion)
 
 ```
-
-
 
 
 
