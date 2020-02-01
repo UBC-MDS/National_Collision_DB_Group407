@@ -27,8 +27,8 @@ from sklearn.pipeline import Pipeline, FeatureUnion, make_pipeline
 from sklearn.metrics import classification_report
 from sklearn.metrics import confusion_matrix
 
-cleaned = pd.read_csv('../data/cleaned_train_data.csv')
-cleaned_test = pd.read_csv('../data/cleaned_test_data.csv')
+cleaned = pd.read_csv('data/cleaned_train_data.csv')
+cleaned_test = pd.read_csv('data/cleaned_test_data.csv')
 cleaned['C_SEV'].value_counts()
 
 
@@ -273,10 +273,10 @@ print(report_rf)
 
 
 df_rf_classification = pd.DataFrame(report_rf)
-df_rf_classification.to_csv('../results/rf_classification.csv')
+df_rf_classification.to_csv('results/rf_classification.csv')
 
 df_rf_classification = pd.DataFrame(report_lr)
-df_rf_classification.to_csv("../results/lgr_classification.csv")
+df_rf_classification.to_csv("results/lgr_classification.csv")
 
 
 # In[99]:
@@ -285,7 +285,7 @@ df_rf_classification.to_csv("../results/lgr_classification.csv")
 confusion_matrix_lgr_train_df = pd.DataFrame(confusion_matrix_lgr_train, 
                                              index = ['Not fatal', 'Fatal'],
                                              columns=['Not fatal', 'Fatal'])
-confusion_matrix_lgr_train_df.to_csv('../results/lgr_train_confusion.csv')
+confusion_matrix_lgr_train_df.to_csv('results/lgr_train_confusion.csv')
 
 
 # In[100]:
@@ -294,7 +294,7 @@ confusion_matrix_lgr_train_df.to_csv('../results/lgr_train_confusion.csv')
 confusion_matrix_lgr_test_df = pd.DataFrame(confusion_matrix_lgr_test, 
                                              index = ['Not fatal', 'Fatal'],
                                              columns=['Not fatal', 'Fatal'])
-confusion_matrix_lgr_test_df.to_csv('../results/lgr_test_confusion.csv')
+confusion_matrix_lgr_test_df.to_csv('results/lgr_test_confusion.csv')
 
 
 # In[101]:
@@ -303,7 +303,7 @@ confusion_matrix_lgr_test_df.to_csv('../results/lgr_test_confusion.csv')
 confusion_matrix_rf_train_df = pd.DataFrame(confusion_matrix_rf_train, 
                                              index = ['Not fatal', 'Fatal'],
                                              columns=['Not fatal', 'Fatal'])
-confusion_matrix_rf_train_df.to_csv('../results/rf_train_confusion.csv')
+confusion_matrix_rf_train_df.to_csv('results/rf_train_confusion.csv')
 
 
 # In[102]:
@@ -312,7 +312,7 @@ confusion_matrix_rf_train_df.to_csv('../results/rf_train_confusion.csv')
 confusion_matrix_rf_test_df = pd.DataFrame(confusion_matrix_rf_test, 
                                              index = ['Not fatal', 'Fatal'],
                                              columns=['Not fatal', 'Fatal'])
-confusion_matrix_rf_test_df.to_csv('../results/rf_test_confusion.csv')
+confusion_matrix_rf_test_df.to_csv('results/rf_test_confusion.csv')
 
 
 # In[105]:
