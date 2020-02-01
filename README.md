@@ -25,6 +25,9 @@ The `P_ISEV` feature provides the fatality of the accident. After splitting the 
 
 ![Roadway Configuration Chart](https://raw.githubusercontent.com/schepal/National_Collision_DB_Group407/master/src/eda/md_file/output_16_0.png)
 
+![Features](img/Features.png)
+
+More information about the meaning of each class for variables can be found [here](https://github.com/rita-ni/National_Collision_DB_Group407/blob/master/data/NCDB_Dictionary.pdf)
 
 **Research Question 03**: Given the features(weather, time of the day, road surface, etc.) determine if emergency services would be needed for an accident.
 
