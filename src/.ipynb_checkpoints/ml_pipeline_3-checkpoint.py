@@ -230,8 +230,10 @@ results_dict['Log'] = [round(tr_err,3), round(valid_err,3)]
 # In[90]:
 
 
-results_dict 
+print(results_dict)
 
+pd.DataFrame(results_dict, index = ['Train', 'Test']).to_csv("../results/errors.csv")
+print("Both models were run and the error file has been generated")
 
 # In[91]:
 
@@ -239,6 +241,9 @@ results_dict
 confusion_matrix_lgr_train = confusion_matrix(y_train, pipe.predict(X_train))
 confusion_matrix_lgr_test = confusion_matrix(y_test, pipe.predict(X_test))
 report_lr = classification_report(y_train, pipe.predict(X_train), output_dict = True)
+
+print("Generated confusion matrices for test and train")
+print("Generated classification report for training data")
 
 fpr, tpr, thresholds = roc_curve(y_test, pipe.predict_proba(X_test)[:,1], pos_label=2)
 
