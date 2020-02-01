@@ -12,9 +12,9 @@ The `C_ISEV` feature (Collision Severity) provides the fatality status of the ac
 
 ![Features](img/Features.png)
 
-After splitting the data into train and test sets, we would like to predict which features strongly predict the fatality. We performed exploratory data analysis to our data, one major finding is that our data is highly imblanced between the two target classes. We therefore took the extra step of balancing our data by downsampling the majority group. We choose to use more robust models like random forest and logistic regression for our classification problem. These models scales well to our large dataset with good performance. After selecting the most predictive features and tuning hyperparameters of our models, we end up creating a model with good accuracy in predicting fatal accidents. This would be useful for road assistant and medical agencies to prepare for emergencies under certain conditions that are more prone to having severe and fatal accidents.
+After splitting the data into train and test sets, we would like to predict which features strongly predict the fatality. We performed exploratory data analysis to our data, one major finding is that our data is highly imblanced between the two target classes. There are `179714` cases of non-fatal collisions and `2559` cases of fatal collisions, this may lead to biased accuracy of model evaluation.
 
-![Features](img/Features.png)
+We therefore took the extra step of balancing our data by downsampling the majority group. We choose to use more robust models like random forest and logistic regression for our classification problem. These models scales well to our large dataset with good performance. After selecting the most predictive features and tuning hyperparameters of our models, we end up creating a model with good accuracy in predicting fatal accidents. This would be useful for road assistant and medical agencies to prepare for emergencies under certain conditions that are more prone to having severe and fatal accidents.
 
 More information about the meaning of each class for variables can be found [here](https://github.com/rita-ni/National_Collision_DB_Group407/blob/master/data/NCDB_Dictionary.pdf)
 
