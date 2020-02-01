@@ -18,8 +18,8 @@ results/eda.png : data/cleaned_train_data.csv src/eda.py
 
 # build models (random forest and logistic regression) and 
 # test results on the test data
-results/ml_reports.csv : src/ml_lgr_rf.py
-	python src/ml_lgr_rf.py 
+results/ml_reports.csv : src/ml_pipeline_3.py
+	python src/ml_pipeline_3.py
 
 # render report
 doc/eda_report.md : doc/eda_report.md
