@@ -87,7 +87,23 @@ Pandas library (McKinney 2010) and Scikit-Learn library (David
 Cournapeau, 2007) to wrangle data and perform the machine learning
 analysis.
 
+We did implement hyperparameter optimization for the max\_depth
+parameter and number of features to be used for the random forest
+implementation. However, in interest of time and system speed, we
+haven’t explored as many hyperparameters as intended.
+
 ### Results and Discussion:
+
+Our training error turns out the be the following:
+
+``` r
+kable(errors)
+```
+
+| X1    | Random Forest |   Log |
+| :---- | ------------: | ----: |
+| Train |         0.027 | 0.295 |
+| Test  |         0.296 | 0.310 |
 
 Accuracy is not an appropriate measure to include for our analysis here
 because the data is highly imbalanced. Virtually any classification
@@ -97,7 +113,15 @@ Random Forest classification model performed the best with the highest
 overall f1-score of 0.45 and 0.99 for the fatal and non-fatal classes
 respectively.
 
-#### Random Forest Results
+After balancing the dataset using upward balancing techniques, we find
+that the test confusion matrix seems quite balanced evidenced by a
+convincing AUC plot. However, when exposed to new test data, both the
+algorithms don’t predict very well. The tendency is to classify actual
+fatal accidents as non-fatal. Since we would like to identify fatalities
+better so that medical services and emergency services could be
+notified, we should be looking at a system with higher precision.
+
+#### Random Forest Results Classification report
 
 ``` r
 kable(random_forest_classification)
@@ -110,14 +134,7 @@ kable(random_forest_classification)
 | f1-score  |    0.9736025 |    0.9732494 | 0.9734271 |    0.9734259 |    0.9734259 |
 | support   | 2559.0000000 | 2559.0000000 | 0.9734271 | 5118.0000000 | 5118.0000000 |
 
-``` r
-kable(random_forest_test_confusion)
-```
-
-| X1        | Not fatal | Fatal |
-| :-------- | --------: | ----: |
-| Not fatal |       590 |    81 |
-| Fatal     |     13393 | 31470 |
+#### Random Forest Results Confusion matrix on the test data
 
 ``` r
 kable(random_forest_train_confusion)
@@ -128,7 +145,18 @@ kable(random_forest_train_confusion)
 | Not fatal |      2508 |    51 |
 | Fatal     |        85 |  2474 |
 
-#### Logistic Regression Results
+#### Random Forest Results Confusion matrix on the test data
+
+``` r
+kable(random_forest_test_confusion)
+```
+
+| X1        | Not fatal | Fatal |
+| :-------- | --------: | ----: |
+| Not fatal |       590 |    81 |
+| Fatal     |     13393 | 31470 |
+
+#### Logistic Regression Classification report
 
 ``` r
 kable(log_reg_classification)
@@ -141,6 +169,8 @@ kable(log_reg_classification)
 | f1-score  |    0.7022871 |    0.7075910 | 0.7049629 |    0.7049390 |    0.7049390 |
 | support   | 2559.0000000 | 2559.0000000 | 0.7049629 | 5118.0000000 | 5118.0000000 |
 
+#### Logistic regression confusion matrix on training data
+
 ``` r
 kable(log_reg_train_confusion)
 ```
@@ -150,29 +180,35 @@ kable(log_reg_train_confusion)
 | Not fatal |      1781 |   778 |
 | Fatal     |       732 |  1827 |
 
+#### Logistic regression confusion matrix on test data
+
 ``` r
 kable(log_reg_test_confusion)
 ```
 
-| X1               | Not fatal | Fatal |
-| :--------------- | --------: | ----: |
-| Not fatal        |       446 |   225 |
-| Fatal            |     13900 | 30963 |
-| \#\#\#\# AUC com |  parisons |       |
+| X1        | Not fatal | Fatal |
+| :-------- | --------: | ----: |
+| Not fatal |       446 |   225 |
+| Fatal     |     13900 | 30963 |
 
-![](%22results/auc_lgr.png%22) ![](%22results/auc_rf.png%22)
+#### AUC comparisons
 
-As a whole we believe there are further improvements that can be made in
-future iterations of this project. Firstly, we believe that using more
-data from previous years can help us better learn the temporal
-relationships and seasonality which may be present. Alternatively, we
-could also seek for improvements by targeting the data imbalance issue
-as mentioned in this article(2020a). Furthermore, our current analysis
-was not implemented with hyper-parameter optimization but for the future
-we would want to tweak our model accordingly to refine the overall
-predictive capacity of our model. Some limitations of our analysis
-includes that diease is a large cause of death besides car
-accidents(2020b).
+![](../results/auc_lgr.png) ![](../results/auc_rf.png)
+
+# Changes and future improvements
+
+Since the previous release, we have succesfully demonstrated the usage
+of hyperparameter optimization using GridSearchCV, implemented a ML
+automation pipeline, added more tables to better support the conclusion
+and improved the data imbalance. There are plenty more improvements
+(scalability, additional hyperparameter optimization) and can be a focus
+outside the academic nature of this analysis.As a whole we believe there
+are further improvements that can be made in future iterations of this
+project. We believe that using more data from previous years can help us
+better learn the temporal relationships and seasonality which may be
+present. Though this doesn’t demonstrate causation, some limitations of
+our analysis includes that diease is a large cause of death besides car
+accidents(2020).
 
 # References
 
@@ -270,16 +306,9 @@ Operations*. <https://CRAN.R-project.org/package=stringr>.
 
 </div>
 
-<div id="ref-imbalance">
-
-2020a. *EliteDataScience*.
-<https://elitedatascience.com/imbalanced-classes>.
-
-</div>
-
 <div id="ref-Iii">
 
-2020b. *Iii.org*.
+2020\. *Iii.org*.
 <https://www.iii.org/fact-statistic/facts-statistics-mortality-risk>.
 
 </div>

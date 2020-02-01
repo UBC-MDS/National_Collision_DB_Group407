@@ -2,7 +2,7 @@
 title: "Predicting Car Crash Fatalities and Proposing Solutions to Save Lives"
 bibliography: refs.bib
 output: 
-  html_document
+  github_document
 ---
 
 ```{r setup, include=FALSE}
