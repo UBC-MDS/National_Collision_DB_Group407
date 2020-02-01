@@ -15,7 +15,7 @@ log_reg <- read_csv("../results/lgr_classification.csv")
 
 ## Summary:
 
-Here we attempt to build a classification model using a variety of different machine learning algorithms  to distinguish between fatal and non-fatal car accidents based on a set of relevant features. Our best model gave us an f1-score of 0.45 and 0.99 for the fatal and non-fatal categories respectively. Despite poor initial results, we believe these values are decent starting points as our dataset is highly imbalanced. 
+Here we attempt to build a classification model using a variety of different machine learning algorithms to distinguish between fatal and non-fatal car accidents based on a set of relevant features. Our best model gave us an f1-score of 0.45 and 0.99 for the fatal and non-fatal categories respectively. Despite poor initial results, we believe these values are decent starting points as our dataset is highly imbalanced. 
 
 
 ## Introduction:
@@ -78,6 +78,7 @@ Accuracy is not an appropriate measure to include for our analysis here because 
 kable(random_forest)
 ```
 
+#### Logistic Regression Results
 
 ```{r}
 kable(log_reg)

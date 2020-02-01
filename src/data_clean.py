@@ -29,12 +29,10 @@ def main(read_path, write_path):
     # clean the test data, dropping rows with unknown/string values and convert data frame to numeric type
     combined_test = pd.concat([X_test, y_test], axis=1)
     cleaned_test = combined_test.apply(pd.to_numeric, errors='coerce').dropna(axis=0).astype(int)
-    # get dummy variables for the cleaned data
-    final_cleaned_train = pd.get_dummies(cleaned_train.astype(str))
-    final_cleaned_test = pd.get_dummies(cleaned_test.astype(str))
+
     print("Saving files...")
-    final_cleaned_train.to_csv(write_path +  "cleaned_train_data.csv")
-    final_cleaned_test.to_csv(write_path + "cleaned_test_data.csv")
+    cleaned_train.to_csv(write_path +  "cleaned_train_data.csv")
+    cleaned_test.to_csv(write_path + "cleaned_test_data.csv")
 
   #  assert main("../data/assert.html", "../results/") == "file path should end with .csv", 'It should raise a warning'
 
