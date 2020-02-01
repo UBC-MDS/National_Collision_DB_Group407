@@ -1,7 +1,5 @@
 # National_Collision_DB_Group407
 
-### Proposal
-
 The data we are using is from the National Collision Database, it can be found on the [Government of Canada website](https://open.canada.ca/data/en/dataset/1eb9eba7-71d1-4b30-9fb1-30cbdab7e63a). It’s a database that contains all police-reported motor vehicle collisions on public roads in Canada. The data is from 1999 to 2017. Each row provides several data points for a passenger with the detailed summary statistics of the collision. Due to the huge amount of data in this dataset, we are only using the most recent data from 2017.
 
 **Research Question**: What features are indicative of a accident causing fatality?
