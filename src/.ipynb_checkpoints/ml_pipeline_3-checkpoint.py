@@ -1,8 +1,9 @@
+#This is the Machine learning pipeline for generating the confusion matrices, classification report, errors and AUC.
+
+
+
 #!/usr/bin/env python
 # coding: utf-8
-
-# In[73]:
-
 
 import pandas as pd
 import matplotlib.pyplot as plt
