@@ -100,7 +100,7 @@ After balancing the dataset using upward balancing techniques, we find that the 
 kable(random_forest_classification)
 ```
 
-#### Random Forest Results Confusion matrix on the test data
+#### Random Forest Results Confusion matrix on the train data
 
 ```{r}
 kable(random_forest_train_confusion)
@@ -143,14 +143,12 @@ kable(log_reg_test_confusion)
 
 
 #### AUC comparisons
-
 ![](../results/auc_lgr.png)
 ![](../results/auc_rf.png)
 
 # Changes and future improvements
 
-Since the previous release, we have succesfully demonstrated the usage of hyperparameter optimization using GridSearchCV, implemented a ML automation pipeline, added more tables to better support the conclusion and improved the data imbalance. There are plenty more improvements (scalability, additional hyperparameter optimization) and can be a focus outside the academic nature of this analysis.As a whole we believe there are further improvements that can be made in future iterations of this project. We believe that using more data from previous years can help us better learn the temporal relationships and seasonality which may be present. Though this doesn't demonstrate causation, some limitations of our analysis includes that diease is a large cause of death besides car accidents[@Iii].
-
+Since the previous release, we have succesfully demonstrated the usage of hyperparameter optimization using GridSearchCV, implemented a machine learning pipeline, added meaningful evaluation metrics to better support the conclusion and improved the issue of data imbalance. There are plenty more improvements (scalability, additional hyperparameter optimization) which can be addressed outside of the academic nature of this analysis. Lastly, we believe using more data from previous years can help us better learn the temporal relationships and seasonality which may be present.
 
 
 # References
