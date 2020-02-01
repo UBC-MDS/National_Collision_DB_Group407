@@ -48,14 +48,14 @@ majority = cleaned[cleaned.C_SEV==2]
 minority = cleaned[cleaned.C_SEV==1]
 
 # downsample majority class
-maj_downsampled = resample(majority, 
+maj_downsampled = resample(majority,
                                  replace=True,     # sample with replacement
                                  n_samples=2559, # to match majority class
                                  random_state=407) # reproducible results
- 
+
 # Combine majority class with upsampled minority class
 resampled = pd.concat([minority, maj_downsampled])
- 
+
 # Display new class counts
 resampled['C_SEV'].value_counts()
 
@@ -87,7 +87,7 @@ preprocessor = ColumnTransformer(
 # In[78]:
 
 
-### parameter tuning 
+### parameter tuning
 
 
 # In[79]:
@@ -181,7 +181,7 @@ results_dict = dict()
 pipe = Pipeline(steps=[('preprocessor', preprocessor),
                        ('classifier', RandomForestClassifier(bootstrap=True, class_weight=None,
                           criterion='gini', max_depth=None, max_features=6,
-                          max_leaf_nodes=None, 
+                          max_leaf_nodes=None,
                           min_impurity_decrease=0.0, min_impurity_split=None,
                           min_samples_leaf=1, min_samples_split=2,
                           min_weight_fraction_leaf=0.0,
@@ -208,7 +208,7 @@ plt.xlabel('false positive rate');
 plt.ylabel('true positive rate');
 plt.title('AUC Random Forest');
 plt.savefig('results/auc_rf.png')
-
+plt.clf()
 # In[88]:
 
 
@@ -255,7 +255,7 @@ plt.xlabel('false positive rate');
 plt.ylabel('true positive rate');
 plt.title('AUC Logistic regression');
 plt.savefig('results/auc_lgr.png')
-
+plt.clf()
 # In[92]:
 
 
@@ -305,7 +305,7 @@ df_rf_classification.to_csv("results/lgr_classification.csv")
 # In[99]:
 
 
-confusion_matrix_lgr_train_df = pd.DataFrame(confusion_matrix_lgr_train, 
+confusion_matrix_lgr_train_df = pd.DataFrame(confusion_matrix_lgr_train,
                                              index = ['Not fatal', 'Fatal'],
                                              columns=['Not fatal', 'Fatal'])
 confusion_matrix_lgr_train_df.to_csv('results/lgr_train_confusion.csv')
@@ -314,7 +314,7 @@ confusion_matrix_lgr_train_df.to_csv('results/lgr_train_confusion.csv')
 # In[100]:
 
 
-confusion_matrix_lgr_test_df = pd.DataFrame(confusion_matrix_lgr_test, 
+confusion_matrix_lgr_test_df = pd.DataFrame(confusion_matrix_lgr_test,
                                              index = ['Not fatal', 'Fatal'],
                                              columns=['Not fatal', 'Fatal'])
 confusion_matrix_lgr_test_df.to_csv('results/lgr_test_confusion.csv')
@@ -323,7 +323,7 @@ confusion_matrix_lgr_test_df.to_csv('results/lgr_test_confusion.csv')
 # In[101]:
 
 
-confusion_matrix_rf_train_df = pd.DataFrame(confusion_matrix_rf_train, 
+confusion_matrix_rf_train_df = pd.DataFrame(confusion_matrix_rf_train,
                                              index = ['Not fatal', 'Fatal'],
                                              columns=['Not fatal', 'Fatal'])
 confusion_matrix_rf_train_df.to_csv('results/rf_train_confusion.csv')
@@ -332,7 +332,7 @@ confusion_matrix_rf_train_df.to_csv('results/rf_train_confusion.csv')
 # In[102]:
 
 
-confusion_matrix_rf_test_df = pd.DataFrame(confusion_matrix_rf_test, 
+confusion_matrix_rf_test_df = pd.DataFrame(confusion_matrix_rf_test,
                                              index = ['Not fatal', 'Fatal'],
                                              columns=['Not fatal', 'Fatal'])
 confusion_matrix_rf_test_df.to_csv('results/rf_test_confusion.csv')
@@ -353,7 +353,3 @@ confusion_matrix_rf_test_df.to_csv('results/rf_test_confusion.csv')
 
 
 # In[ ]:
-
-
-
-
