@@ -4,6 +4,14 @@ RUN apt-get update
 
 RUN apt-get install r-base r-base-dev -y
 
+RUN Rscript -e "install.packages('tidyverse')"
+
+RUN Rscript -e "install.packages('docopt')"
+
+RUN Rscript -e "install.packages('stringr')"
+
+RUN Rscript -e "install.packages('testthat')"
+
 FROM debian:buster-slim
 
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
